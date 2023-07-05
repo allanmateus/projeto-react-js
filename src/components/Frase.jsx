@@ -1,8 +1,10 @@
-function Frase(){
+import styles from './Frase.module.css'
+
+function Frase({texto}){
     return(
         <>
-            <div>
-                <h1>Frase...</h1>
+            <div className={styles.fraseContainer}>
+                <p className={styles.fraseContent}>{texto}</p>
             </div>
         </>
     )
