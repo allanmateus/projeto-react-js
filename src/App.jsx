@@ -1,22 +1,30 @@
 import { useState } from 'react'
 import './App.css'
-//import './components/HelloWorld'
-//import HelloWorld from './components/HelloWorld'
-//import List from './components/List'
-import Evento from './components/Evento'
-import Form from './components/Form'
+import { Link, BrowserRouter as Router, Routes, Route, Navigate  } from 'react-router-dom'
+import Navbar from './components/layout/Navbar'
+import Home from './components/pages/Home'
+import Contact from './components/pages/Contact'
+import Company from './components/pages/Company'
+import NewProject from './components/pages/NewProject'
+import Container from './components/layout/Container'
 
 function App() {
+  const meusItens = ['React', 'Vue', 'Angular']
+  const [nome, setNome] = useState()
   return (
-    <>
-      <div>
-        <h1>Testando eventos</h1>
-        <Evento numero={1}/>
-        <Evento numero={2}/>
-      </div>
-
-      <Form/>
-    </>
+    <div className='App'>
+        <Router>
+            <Navbar/>
+            <Routes>
+              <Container customClass = 'min-height'>
+                <Route path= "/" element={<Home/>}/>
+                <Route path= "/contact" element={<Contact/>}/>
+                <Route path= "/company" element={<Company/>}/>
+                <Route path= "/newproject" element={<NewProject/>}/>
+              </Container>
+            </Routes>
+        </Router>
+    </div>
   )
 }
 
