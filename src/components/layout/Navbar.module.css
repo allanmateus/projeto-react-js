@@ -1,13 +1,8 @@
-.menu{
-    width: 100vw;
-    height: 8.5vh;
-    background-color: #141314;
-    gap: 10px;
+.navbar{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 1rem;
+    background-color: #222;
+    padding: 1em;
 }
 
 
@@ -29,4 +24,8 @@
 .item a:hover{
     color: #ffbb33;
     text-decoration: none;
+}
+
+.logo{
+    size: 20px;
 }

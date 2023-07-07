@@ -1,29 +1,28 @@
-import { useState } from 'react'
 import './App.css'
 import { Link, BrowserRouter as Router, Routes, Route, Navigate  } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Home from './components/pages/Home'
 import Contact from './components/pages/Contact'
 import Company from './components/pages/Company'
-import NewProject from './components/pages/NewProject'
+import Projects from './components/pages/Projects'
 import Container from './components/layout/Container'
+import Footer from './components/layout/Footer'
 
 function App() {
-  const meusItens = ['React', 'Vue', 'Angular']
-  const [nome, setNome] = useState()
-  return (
+   return (
     <div className='App'>
-        <Router>
-            <Navbar/>
+      <Router>
+        <Navbar/>
+        <Container customClass = 'min-height'>
             <Routes>
-              <Container customClass = 'min-height'>
-                <Route path= "/" element={<Home/>}/>
-                <Route path= "/contact" element={<Contact/>}/>
-                <Route path= "/company" element={<Company/>}/>
-                <Route path= "/newproject" element={<NewProject/>}/>
-              </Container>
+              <Route path= "/" element={<Home/>}/>
+              <Route path= "/contact" element={<Contact/>}/>
+              <Route path= "/company" element={<Company/>}/>
+              <Route path= "/projects" element={<Projects/>}/>
             </Routes>
-        </Router>
+        </Container>
+        <Footer/> 
+      </Router>
     </div>
   )
 }
