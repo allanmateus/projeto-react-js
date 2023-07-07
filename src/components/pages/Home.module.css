@@ -22,3 +22,8 @@
     margin-bottom: 1.53em;
     color: #7b7b7b;
 }
+
+.home_container img{
+    width: 350px;
+    margin: 2em 0;
+}
